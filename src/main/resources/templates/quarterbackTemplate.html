@@ -1,24 +1,36 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
   <head>
-    <link rel="stylesheet" href="../static/quarterbackStyle.css" />
+    <link rel="stylesheet" href="quarterbackStyle.css" />
     <title th:text="${quarterbackModel.name}"></title>
   </head>
   <body>
-    <div class="conatiner">
+    <div class="container">
       <header>
         <h1 th:text="${quarterbackModel.name}"></h1>
       </header>
       <main>
         <ul>
-          <p><a href="/quarterbacks">quarterbacks</a></p>
-          <li th:text="${quarterbackModel.name}"></li>
+          <p><a href="/quarterbacks"> Back </a></p>
         </ul>
-        <img th:src="${quarterbackModel.image}" alt=" " />
-        <h2 th:text="${quarterbackModel.yearsActive}"></h2>
-        <h2 th:text="${quarterbackModel.superBowlWins}"></h2>
-        <h2 th:text="${quarterbackModel.passerRating}"></h2>
-        <h2 th:text="${quarterbackModel.tdToInt}"></h2>
+        <article class="quarterback">
+          <img th:src="${quarterbackModel.image}" alt=" " />
+          <section class="stats">
+            <h2>Stats:</h2>
+            <h3
+              th:text="'Years active: ' + ${quarterbackModel.yearsActive}"
+            ></h3>
+            <h3
+              th:text="'Super Bowl Wins: ' + ${quarterbackModel.superBowlWins}"
+            ></h3>
+            <h3
+              th:text="'Passer Rating: ' + ${quarterbackModel.passerRating}"
+            ></h3>
+            <h3
+              th:text="'Touchdowns to Interceptions: ' + ${quarterbackModel.tdToInt}"
+            ></h3>
+          </section>
+        </article>
       </main>
       <footer>
         <small>&copy Tony Blankenship 2021</small>

@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="../static/quarterbacksStyle.css" />
+    <link rel="stylesheet" href="/quarterbacksStyle.css" />
     <title>GB's most memorable QBS</title>
   </head>
   <body>
@@ -11,14 +11,19 @@
         <h1>GreenBays most memorable QuarterBacks</h1>
       </header>
       <main>
-        <ul>
-          <li th:each="quarterback: ${quarterbacksModel}">
-            <a
-              th:href="@{/quarterback(id=${quarterback.id})}"
-              th:text="${quarterback.name}"
-            ></a>
-          </li>
-        </ul>
+        <div class="quarterbacks">
+          <article
+            class="quarterback"
+            th:each="quarterback: ${quarterbacksModel}"
+          >
+            <div class="ImageLink">
+              <a th:href="@{/quarterback(id=${quarterback.id})}">
+                <img th:src="${quarterback.image}" alt=" " />
+              </a>
+              <h3 th:text="${quarterback.name}"></h3>
+            </div>
+          </article>
+        </div>
       </main>
       <footer>
         <small>&copy Tony Blankenship 2021</small>
