@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <link rel="stylesheet" href="quarterbackStyle.css" />
+    <title th:text="${quarterbackModel.name}"></title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1 th:text="${quarterbackModel.name}"></h1>
+      </header>
+      <main>
+        <ul>
+          <p><a href="/quarterbacks"> Back </a></p>
+        </ul>
+        <article class="quarterback">
+          <img th:src="${quarterbackModel.image}" alt=" " />
+          <section class="stats">
+            <h2>Stats:</h2>
+            <h3
+              th:text="'Years active: ' + ${quarterbackModel.yearsActive}"
+            ></h3>
+            <h3
+              th:text="'Super Bowl Wins: ' + ${quarterbackModel.superBowlWins}"
+            ></h3>
+            <h3
+              th:text="'Passer Rating: ' + ${quarterbackModel.passerRating}"
+            ></h3>
+            <h3
+              th:text="'Touchdowns to Interceptions: ' + ${quarterbackModel.tdToInt}"
+            ></h3>
+          </section>
+        </article>
+      </main>
+      <footer>
+        <small>&copy Tony Blankenship 2021</small>
+      </footer>
+    </div>
+  </body>
+</html>
